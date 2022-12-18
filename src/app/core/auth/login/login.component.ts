@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { Ruoli } from 'src/app/model/ruoli';
 import { Utente } from 'src/app/model/utente';
 import { AuthService } from '../auth.service';
 
@@ -12,6 +13,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
+  ruolo:Ruoli = {codice:"ROLE_ADMIN",descrizione:"Administrator"}
   utente:Utente = {username:"", password:"", token:""}
   errormessage:string = ""
 

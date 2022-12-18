@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
 import { AuthModule } from './core/auth/auth.module';
 import { LayoutModule } from './core/layout/layout.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LayoutModule } from './core/layout/layout.module';
     HttpClientModule,
     FormsModule,
     LayoutModule,
-    AuthModule
+    AuthModule,
+    SharedModule
   ],
   providers: [
     {
