@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path:'welcome',
-    loadChildren: () => import("./feature/welcome/welcome.component").then(m => m.WelcomeComponent)
+    loadChildren: () => import("./feature/welcome/welcome.module").then(m => m.WelcomeModule)
   },
   {
     path: 'tavolo',
