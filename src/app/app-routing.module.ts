@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'tavolo',
     loadChildren: () => import("./feature/tavolo/tavolo.module").then(m => m.TavoloModule)
   },
+  {
+    path: 'auth',
+    loadChildren: () => import("./core/auth/auth.module").then(m => m.AuthModule)
+  },
   {path:'',redirectTo:'welcome',pathMatch:'full'},
   {path: '**',redirectTo: 'welcome',pathMatch: 'full'}
 ];
