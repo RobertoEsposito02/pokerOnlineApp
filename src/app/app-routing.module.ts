@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'welcome',
+    loadChildren: () => import("./feature/welcome/welcome.component").then(m => m.WelcomeComponent)
+  },
+  {
+    path: 'tavolo',
+    loadChildren: () => import("./feature/tavolo/tavolo.module").then(m => m.TavoloModule)
+  },
+  {path:'',redirectTo:'welcome',pathMatch:'full'},
+  {path: '**',redirectTo: 'welcome',pathMatch: 'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

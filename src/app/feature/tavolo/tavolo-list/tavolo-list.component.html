@@ -1,1 +1,48 @@
-<p>tavolo-list works!</p>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+        <div class="alert alert-success alert-dismissible fade show " role="alert" *ngIf="confirmMessage">
+            {{confirmMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Lista dei risultati</h5>
+            </div>
+            <div class='card-body'>
+                <a class="btn btn-primary " routerLink="/tavolo/create">Add New</a>
+
+                <div class='table-responsive'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Esperienza Minima</th>
+                                <th>Cifra Minima</th>
+                                <th>Denominazione</th>
+                                <th>Data Creazione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let tavoloItem of tavoli" [routerLink]="['/tavolo',tavoloItem.id]">
+                                <td>{{tavoloItem.id}}</td>
+                                <td>{{tavoloItem.esperienzaMinima}}</td>
+                                <td>{{tavoloItem.cifraMinima}}</td>
+                                <td>{{tavoloItem.denominazione}}</td>
+                                <td>{{tavoloItem.dataCreazione | date:'dd/MM/yyyy'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+
+        <!-- end container -->
+    </div>
+
+</main>

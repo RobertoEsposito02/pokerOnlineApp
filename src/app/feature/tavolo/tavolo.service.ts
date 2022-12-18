@@ -17,8 +17,8 @@ export class TavoloService {
 
   constructor(private _http:HttpClient) { }
 
-  getRegisti():Observable<Tavolo>{
-    return this._http.get<Tavolo>(this.apiServer);
+  getRegisti():Observable<Tavolo[]>{
+    return this._http.get<Tavolo[]>(this.apiServer);
   }
 
   createRegista(tavoloInput:Tavolo):Observable<Tavolo>{
