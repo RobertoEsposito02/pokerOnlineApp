@@ -17,7 +17,7 @@ export class TavoloService {
 
   constructor(private _http:HttpClient) { }
 
-  getRegisti():Observable<Tavolo[]>{
+  getTavoli():Observable<Tavolo[]>{
     return this._http.get<Tavolo[]>(this.apiServer);
   }
 
@@ -26,6 +26,10 @@ export class TavoloService {
     return this._http.post<Tavolo>(this.apiServer, tavoloInput, this.httpOptions).pipe(
       catchError(this.handleError<Tavolo>('createTavolo'))
     )
+  }
+
+  detailTavolo(id:number){
+    return this._http.get<Tavolo>(this.apiServer + "/" + id)
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

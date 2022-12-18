@@ -16,7 +16,7 @@ export class TavoloListComponent implements OnInit, OnDestroy{
   constructor(private _tavoloService:TavoloService){}
 
   ngOnInit(): void {
-    this.sub = this._tavoloService.getRegisti().subscribe(tavoliListItem => this.tavoli = tavoliListItem)
+    this.sub = this._tavoloService.getTavoli().subscribe(tavoliListItem => this.tavoli = tavoliListItem)
   }
 
   ngOnDestroy(): void {

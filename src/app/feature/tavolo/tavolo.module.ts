@@ -4,6 +4,7 @@ import { TavoloListComponent } from './tavolo-list/tavolo-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TavoloCreateComponent } from './tavolo-create/tavolo-create.component';
+import { TavoloDetailComponent } from './tavolo-detail/tavolo-detail.component';
 
 const routes:Routes = [
   {
@@ -15,6 +16,10 @@ const routes:Routes = [
     component: TavoloCreateComponent
   },
   {
+    path: 'detail/:id',
+    component: TavoloDetailComponent
+  },
+  {
     path: '**',
     redirectTo: ''
   }
@@ -23,7 +28,8 @@ const routes:Routes = [
 @NgModule({
   declarations: [
     TavoloListComponent,
-    TavoloCreateComponent
+    TavoloCreateComponent,
+    TavoloDetailComponent
   ],
   imports: [
     CommonModule,

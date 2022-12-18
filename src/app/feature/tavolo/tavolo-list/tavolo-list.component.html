@@ -1,5 +1,5 @@
 <!-- Begin page content -->
-<main class="flex-shrink-0">
+<main class="flex-shrink-0 mb-5">
     <div class="container">
 
         <div class="alert alert-success alert-dismissible fade show " role="alert" *ngIf="confirmMessage">
@@ -23,6 +23,7 @@
                                 <th>Cifra Minima</th>
                                 <th>Denominazione</th>
                                 <th>Data Creazione</th>
+                                <th>Azioni</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,6 +33,9 @@
                                 <td>{{tavoloItem.cifraMinima}}</td>
                                 <td>{{tavoloItem.denominazione}}</td>
                                 <td>{{tavoloItem.dataCreazione | date:'dd/MM/yyyy'}}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-info" [routerLink]="['/tavolo/detail', tavoloItem.id]">Visualizza</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
