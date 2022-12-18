@@ -35,6 +35,7 @@
                                 <td>{{tavoloItem.dataCreazione | date:'dd/MM/yyyy'}}</td>
                                 <td>
                                     <button class="btn btn-sm btn-outline-info" [routerLink]="['/tavolo/detail', tavoloItem.id]">Visualizza</button>
+                                    <button class="btn btn-sm btn-outline-primary" [routerLink]="['/tavolo/edit', tavoloItem.id]">Edit</button>
                                 </td>
                             </tr>
                         </tbody>

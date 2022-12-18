@@ -28,8 +28,16 @@ export class TavoloService {
     )
   }
 
-  detailTavolo(id:number){
-    return this._http.get<Tavolo>(this.apiServer + "/" + id)
+  detailTavolo(id:number):Observable<Tavolo>{
+    return this._http.get<Tavolo>(this.apiServer + "/" + id).pipe(
+      catchError(this.handleError<Tavolo>('detailTavolo'))
+    )
+  }
+
+  editTavolo(tavolo:Tavolo):Observable<Tavolo>{
+    return this._http.put<Tavolo>(this.apiServer, tavolo, this.httpOptions).pipe(
+      catchError(this.handleError<Tavolo>('editTavolo'))
+    )
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
