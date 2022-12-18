@@ -9,7 +9,7 @@ import { TavoloService } from '../tavolo.service';
   styleUrls: ['./tavolo-detail.component.css']
 })
 export class TavoloDetailComponent implements OnInit{
-  tavolo!:Tavolo;
+  tavolo:Tavolo = {id:0,esperienzaMinima: 0, cifraMinima: 0, denominazione: "", dataCreazione: new Date()};
 
   constructor(private _tavoloService:TavoloService, private _router:ActivatedRoute){}
   

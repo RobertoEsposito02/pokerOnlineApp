@@ -1,0 +1,41 @@
+<div class="container mt-5 mb-5">
+    <div class='card'>
+        <div class='card-header' style="background-color: rgb(240, 240, 240);">
+            <h5>Visualizza dettaglio</h5>
+        </div>
+    
+        <div class='card-body'>
+            <dl class="row">
+              <dt class="col-sm-2 text-right">Id:</dt>
+              <dd class="col-sm-10">{{tavolo.id}}</dd>
+            </dl>
+            
+            <dl class="row">
+                <dt class="col-sm-2 text-right">Esperienza minima:</dt>
+                <dd class="col-sm-10">{{tavolo.esperienzaMinima}}</dd>
+              </dl>
+            
+            <dl class="row">
+              <dt class="col-sm-2 text-right">Cifra minima:</dt>
+              <dd class="col-sm-10">{{tavolo.cifraMinima}}</dd>
+            </dl>
+            
+            <dl class="row">
+              <dt class="col-sm-2 text-right">Denominazione:</dt>
+              <dd class="col-sm-10">{{tavolo.denominazione}}</dd>
+            </dl>
+
+            <dl class="row">
+              <dt class="col-sm-2 text-right">Data Creazione:</dt>
+              <dd class="col-sm-10">{{tavolo.dataCreazione}}</dd>
+            </dl>
+        <!-- end card body -->
+        </div>
+    <!-- end card -->
+        <div class="card-footer">
+            <button class="btn btn-sm btn-outline-secondary" routerLink="/tavolo">Back</button>
+            <button class="btn btn-sm btn-danger" (click)="delete()">Conferma</button>
+        </div>
+    </div>	
+<!-- end container -->  
+</div>

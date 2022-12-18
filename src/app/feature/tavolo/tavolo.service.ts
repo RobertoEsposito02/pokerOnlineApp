@@ -40,6 +40,10 @@ export class TavoloService {
     )
   }
 
+  delete(id:number){
+    this._http.delete(this.apiServer + "/" + id)
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

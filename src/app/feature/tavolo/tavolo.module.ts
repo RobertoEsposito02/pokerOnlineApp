@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { TavoloCreateComponent } from './tavolo-create/tavolo-create.component';
 import { TavoloDetailComponent } from './tavolo-detail/tavolo-detail.component';
 import { TavoloEditComponent } from './tavolo-edit/tavolo-edit.component';
+import { TavoloDeleteComponent } from './tavolo-delete/tavolo-delete.component';
 
 const routes:Routes = [
   {
@@ -25,6 +26,10 @@ const routes:Routes = [
     component:TavoloEditComponent
   },
   {
+    path: 'delete/:id',
+    component:TavoloDeleteComponent
+  },
+  {
     path: '**',
     redirectTo: ''
   }
@@ -35,7 +40,8 @@ const routes:Routes = [
     TavoloListComponent,
     TavoloCreateComponent,
     TavoloDetailComponent,
-    TavoloEditComponent
+    TavoloEditComponent,
+    TavoloDeleteComponent
   ],
   imports: [
     CommonModule,
