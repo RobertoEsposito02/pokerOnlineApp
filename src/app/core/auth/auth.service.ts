@@ -11,6 +11,7 @@ export class AuthService {
   private userLoggedSubject$: BehaviorSubject<Utente | null> = new BehaviorSubject<Utente | null>(null);
   
   private apiServer = 'http://localhost:8080/api/auth';
+  private apiServerForRoles = 'http://localhost:8080/api/utente/userInfo';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -19,6 +20,10 @@ export class AuthService {
 
   constructor(private _http:HttpClient) { }
   
+  roles(): Observable<{ roles: string[] }> {
+    return this._http.get<{ roles: string[] }>(this.apiServerForRoles);
+  }
+
   login(loginForm:Utente):Observable<Utente>{
     //this.setUserLogged(loginForm);
     return this._http.post<{'jwt-token': string}>(this.apiServer + "/login", JSON.stringify(loginForm), this.httpOptions).

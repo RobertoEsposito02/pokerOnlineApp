@@ -7,6 +7,7 @@ import { TavoloCreateComponent } from './tavolo-create/tavolo-create.component';
 import { TavoloDetailComponent } from './tavolo-detail/tavolo-detail.component';
 import { TavoloEditComponent } from './tavolo-edit/tavolo-edit.component';
 import { TavoloDeleteComponent } from './tavolo-delete/tavolo-delete.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes:Routes = [
   {
@@ -46,7 +47,7 @@ const routes:Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    //SharedModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })
