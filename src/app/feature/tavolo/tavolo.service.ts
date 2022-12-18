@@ -21,7 +21,8 @@ export class TavoloService {
     return this._http.get<Tavolo[]>(this.apiServer);
   }
 
-  createRegista(tavoloInput:Tavolo):Observable<Tavolo>{
+  createTavolo(tavoloInput:Tavolo):Observable<Tavolo>{
+    tavoloInput.dataCreazione = new Date();
     return this._http.post<Tavolo>(this.apiServer, tavoloInput, this.httpOptions).pipe(
       catchError(this.handleError<Tavolo>('createTavolo'))
     )

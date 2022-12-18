@@ -1,5 +1,5 @@
 export interface Tavolo {
-    id:number;
+    id?:number;
     esperienzaMinima:number;
     cifraMinima:number;
     denominazione:string;

@@ -1,0 +1,83 @@
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+
+
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage">
+            {{errorMessage}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Inserisci nuovo elemento</h5>
+            </div>
+            <div class='card-body'>
+
+                <form (ngSubmit)="save(tavoloForm)" #tavoloForm="ngForm" class="row g-3">
+
+
+                    <div class="col-md-6">
+                        <label>Espserienza Minima<span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" placeholder="Inserire esperienza minima" required min="1"
+                            id="esperienzaMinima" name="esperienzaMinima" [(ngModel)]="tavolo.esperienzaMinima" #esperienzaMinimaVar="ngModel"
+                            [ngClass]="{'is-invalid': (esperienzaMinimaVar.touched || esperienzaMinimaVar.dirty) && !esperienzaMinimaVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="esperienzaMinimaVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="esperienzaMinimaVar.errors?.['min']">
+                                Il campo deve essere almeno 1.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Cifra Minima<span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" placeholder="Inserire cifra minima" required min="99"
+                            id="cifraMinima" name="cifraMinima" [(ngModel)]="tavolo.cifraMinima" #cifraMinimaVar="ngModel"
+                            [ngClass]="{'is-invalid': (cifraMinimaVar.touched || cifraMinimaVar.dirty) && !cifraMinimaVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="cifraMinimaVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="cifraMinimaVar.errors?.['min']">
+                                Il campo deve essere almeno 100.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Denominazione<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="Inserire la denominazione" required
+                            minlength="2" id="denominazione" name="denominazione" [(ngModel)]="tavolo.denominazione"
+                            #denominazioneVar="ngModel"
+                            [ngClass]="{'is-invalid': (denominazioneVar.touched || denominazioneVar.dirty) && !denominazioneVar.valid }">
+                        <span class="invalid-feedback">
+                            <span *ngIf="denominazioneVar.errors?.['required']">
+                                Prego inserire un valore
+                            </span>
+                            <span *ngIf="denominazioneVar.errors?.['minlength']">
+                                Il campo deve avere almeno due caratteri.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" name="submit" value="submit" id="submit"
+                            class="btn btn-primary">Conferma</button>
+                    </div>
+
+
+                </form>
+
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+        <!-- end container -->
+    </div>
+
+    <!-- end main -->
+</main>
